@@ -1,0 +1,17 @@
+@startuml
+
+class Human {
+
+    - String name;
+    - int age;
+    - double height;
+    - String eyeColour;
+
+    + void Human(String name, int age, double height, String eyeColour)
+    + String speak()
+    + String eat(String food)
+    + String walk(String walking)
+
+}
+
+@enduml
