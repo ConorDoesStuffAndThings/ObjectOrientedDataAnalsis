@@ -1,0 +1,58 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+class Guitar{
+- serialNumber: String
+- price: double
+- builder: Builder
+- model: String
+- type: Type
+- backWood: Wood
+- topWood: Wood
++ setSerialNumber(String)
++ setPrice(float)
++ getSerialNumber(): String
++ getPrice(): double
++ getBuilder(): String
++ getBuilder(): String
++ getBuilder(): String
++ getBuilder(): String
++ getBuilder(): String
+
+}
+
+class Inventory{
++ addGuitar(String, double, Builder, String, Type, Wood, Wood)
++ getGuitar(String): Guitar
++ search(Guitar): List
+}
+
+Inventory o-- Guitar
+
+enum Builder {
+  FENDER
+  GIBSON
+  COLLINS
+}
+enum Wood {
+  CEDAR
+  ALDER
+  MAHOGANY
+}
+enum Type {
+  ACOUSTIC
+  ELECTRIC
+}
+Builder -[hidden]> Wood
+Builder -[hidden]> Type
+
+
+together {
+  Enum Builder
+  Enum Type
+  Enum Wood
+}
+
+
+@enduml
